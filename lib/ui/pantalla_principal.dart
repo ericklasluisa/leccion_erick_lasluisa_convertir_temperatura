@@ -39,7 +39,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(100.0),
           child: Card(
             elevation: 4,
             shape: RoundedRectangleBorder(
@@ -72,29 +72,27 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: validar,
-                    icon: const Icon(Icons.thermostat),
-                    label: const Text('Convertir'),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                  Center(
+                    child: ElevatedButton.icon(
+                      onPressed: validar,
+                      icon: const Icon(Icons.thermostat),
+                      label: const Text('Convertir'),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 16, horizontal: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 20),
                   Text(
                     'Resultado:',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    _resultado.isEmpty
-                        ? 'Esperando un valor válido...'
-                        : '$_resultado °F',
+                    _resultado.isEmpty ? '' : '$_resultado °F',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
